@@ -1,0 +1,105 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-disabled: #c5c5c5a2;
+    --color-black: #111111;
+    --color-light-blue: #3264AE;
+    --color-light-background: #fafafa;
+    --font-light: montserratLight;
+    --font-logo: logo;
+    --font-bold: montserratBold;
+    --font-regular: montserrat;
+    --font-thin: montserratThin;
+}
+
+@font-face {
+    font-family: montserratThin;
+    src: url("../fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: montserratBold;
+    src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+@font-face{
+    font-family: logo;
+    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+}
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--font-regular);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+header .logo{
+    height: 45px;
+}
+
+header .options{
+    display: flex;
+    justify-content: space-between;
+    margin-left: -5vw;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    color: var(--color-white);
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-light);
+    margin-right: 2vw;
+}
+
+header .btn-entrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 2vw 8px 2vw;
+    border: #fff solid 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+header .btn-entrar img{
+    margin-left: 1vw;
+}
+
+header .btn-entrar:hover{
+    background-color: var(--color-white);;
+    color: #0F0054;
+    font-family: var(--font-bold);
+}
+
+header ul li a:hover{
+    border-bottom: 2px solid #BD2323;
+}

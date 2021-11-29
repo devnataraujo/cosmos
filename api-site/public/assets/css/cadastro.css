@@ -1,0 +1,183 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-disabled: #c5c5c5a2;
+    --color-black: #111111;
+    --color-light-blue: #3264AE;
+    --color-blue: #0F0054;
+    --font-light: montserratLight;
+    --font-logo: logo;
+    --font-bold: montserratBold;
+    --font-regular: montserrat;
+    --font-thin: montserratThin;
+}
+
+@font-face {
+    font-family: montserratThin;
+    src: url("../fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: montserratBold;
+    src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+@font-face{
+    font-family: logo;
+    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+}
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('../background.png');
+}
+
+
+.content{
+    background-color: var(--color-light-background);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 1vh;
+    padding: 7vh 5vw 8vh 5vw;
+    height: 100vh;
+}
+
+.content .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: --col
+}
+
+.content .logo h1{
+    font-family: var(--font-logo);
+    font-size: 4rem;
+}
+
+.content .form{
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 5vh;
+    width: 60vw;
+}
+
+.content .form input[type="text"],
+.content .form input[type="password"],
+.content .form input[type="email"],
+.content .form input[type="date"],
+.content .form #input_naturalidade{
+    background: none;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    color: #000;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 1vw;
+    width: 100%;
+}
+
+.content .form .form-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+    width: 100%;
+}
+
+.content .form .form-group .naturalidade,
+.content .form .col-name,
+.content .form .col-email,
+.content .form .col-nickname,
+.content .form .col-password,
+.content .form .col-confirmPassword,
+.content .form .form-group .form-col input[type="date"]{
+    display: flex;
+    margin-top: 1.5vh;
+}
+.content .form .name .col-name input[type="text"]::placeholder,
+.content .form .col-email input[type="email"]::placeholder,
+.content .form .col-nickname input[type="text"]::placeholder,
+.content .form .col-password input[type="password"]::placeholder,
+.content .form .col-confirmPassword input[type="password"]::placeholder{
+    color: var(--color-black);
+}
+.content .form .name{
+    margin-bottom:  5vh;
+}
+
+.content .form .name .col-name input[type="text"],
+.content .form .col-email input[type="email"],
+.content .form .col-nickname input[type="text"],
+.content .form input[type="password"]{
+    color: var(--color-black);
+    padding-left: 40px;
+    margin-left: -34px;
+}
+
+
+.content .form input[type="password"]::placeholder{
+    font-family: var(--font-bold);
+    font-size: 32px;
+}
+
+.content .form input[type="text"]:focus,
+.content .form  input[type="email"]:focus,
+.content .form input[type="password"]:focus,
+.content .form input[type="date"]:focus,
+.content .form select:focus{
+    outline:solid 3px rgba(36, 41, 109, 0.62);
+    border: solid 2px #24296D;
+}
+
+.content .form .name .col-name .iconify,
+.content .form .col-email .iconify,
+.content .form .col-nickname .iconify,
+.content .form .col-password .iconify,
+.content .form .col-confirmPassword .iconify,
+.content .form .naturalidade .iconify{
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.content .form input[type="date"]{
+    width: 98%;
+}
+
+
+.content .form .form-group .form-col{
+    width: 48%;
+}
+
+.btn-cadastrar{
+    width: 100%;
+    text-align: center;
+    height:50px;
+    background: none;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    color: #000;
+    font-family: var(--font-regular);
+}
+
+.btn-cadastrar:hover{
+    height:50px;
+    background: #000;
+    color: var(--color-white);
+    font-family: var(--font-bold);
+}
+

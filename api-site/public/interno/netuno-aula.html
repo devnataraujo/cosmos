@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="../js/funcoes.js"></script>
+        <!-- <link rel="stylesheet" href="./assets/css/niveis.css"> -->
+        <link rel="stylesheet" href="./assets/css/universal.css">
+        <link rel="stylesheet" href="./assets/css/netuno.css">
+    </head>
+    <body id="teste" onload="validarSessao(), atualizacaoPeriodica()">
+        <div class="header">
+            <div class="one">
+                <a href="index.html">
+                    <img src="assets/img/btn-voltar.png"  >
+                </a>
+                <p>
+                    Olá, <span class="sp_nomeUser" id="span_nome">
+                        User
+                    </span>
+                </p>
+            </div>
+            <div class="two">
+                <p class="pontos">
+                    pontos: <span id="sp_pontosUser">0000</span>
+                </p>
+                <div class="empresa">
+                    <p class="logo">
+                        COSMOS
+                    </p>
+                    +
+                        <span class="iconify" data-icon="simple-icons:nasa" style="color: #d90404;" data-width="50"></span>   
+                </div>                 
+            </div>
+        </div>
+        <div class="content">
+            <div class="aula-title">
+                <h3>Netuno e as variáveis</h3>
+                <hr size="5" noshade class="aula-line">
+            </div>
+            <div class="aula-texts">
+                <section class="one">
+                    <img src="./assets/img/netuno-aula.png">
+                    <div class="texts">
+                        <p class="text primary">
+                            A primeira coisa que precisamos aprender antes de sairmos de Netuno é sobre as variáveis.
+                            Variaveis são caixinhas que guardam coisas. Essas caixinhas são pequenas e só deixam guardam uma unica coisa.
+                            Você pode usar assim:
+                        </p>
+                        <div class="one-code">
+                            <p>var caixaUm = “Banana”</p>
+                            <p>var caixaDois = “Maçã”</p>
+                        </div>
+                        <p class="text">
+                            Quando você precisar da Banana é so você pegar a <b>caixaUm</b> <br>
+                            Quando você precisar da Maçã é só pegar a <b>caixaDois</b>
+                        </p>
+                    </div>
+                </section>
+                <section class="two">
+                    <p class="text">
+                        Outra coisa legal para saber sobre as variaveis é que elas podem guardar coisas diferentes como numeros e  palavras, e no nosso caso os objetos da missão.
+                        Nós tambem podemos dar o nome que quisermos para as variaveis
+                    </p>
+                    <div class="two-code">
+                        <p>var Foguete = “Combustivel”</p>
+                        <p>var Idade = 5</p>
+                    </div>
+                </section>
+                <div class="btn-content">
+                    <a href="netuno-game.html" class="btn-game">
+                        Ir para a missão
+                        <span class="iconify" data-icon="bx:bx-rocket"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+<html>
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>

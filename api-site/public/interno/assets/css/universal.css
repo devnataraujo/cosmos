@@ -1,0 +1,94 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-disabled: #c5c5c5a2;
+    --font-light: montserratLight;
+    --font-logo: logo;
+    --font-bold: montserratBold;
+    --font-regular: montserrat;
+    --font-thin: montserratThin;
+}
+
+@font-face {
+    font-family: montserratThin;
+    src: url("../fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: montserratBold;
+    src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+@font-face{
+    font-family: logo;
+    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+}
+
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    background-image: url("/assets/background.png");
+    background-color: #24296D;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .5s;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+.header .one{
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+}
+
+.header .one p{
+    font-family: var(--font-light);
+    margin-left: 4vw;
+    color: var(--color-white);
+}
+
+.header .two{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2vw;
+    width: 30vw;
+}
+
+.header .two .pontos{
+    font-family: var(--font-light);
+    color: var(--color-white);
+    margin-right: 2vw;
+}
+
+.header .two .empresa .logo{
+    font-family: var(--font-logo);
+    color: var(--color-white);
+}
+
+.header .two .empresa{
+    display: flex;
+    align-items: center;
+    font-family: var(--font-light);
+    color: var(--color-white);
+    width: 13vw;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+}

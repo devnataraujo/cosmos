@@ -1,0 +1,172 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-disabled: #c5c5c5a2;
+    --color-black: #111111;
+    --font-light: montserratLight;
+    --font-logo: logo;
+    --font-bold: montserratBold;
+    --font-regular: montserrat;
+    --font-thin: montserratThin;
+    --color-light-blue: #3264AE;
+}
+
+@font-face {
+    font-family: montserratThin;
+    src: url("../fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: montserratBold;
+    src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+@font-face{
+    font-family: logo;
+    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+}
+
+*{
+    margin: 0;
+    border: 0;
+}
+
+body{
+    font-family: var(--font-regular);
+    
+}
+.content{
+    background-color: var(--color-white);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 10vh 5vw;
+}
+
+.content .aula-title{
+    display: flex;
+    color: var(--color-light-blue);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .aula-title .iconify{
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+
+.content .aula-title h3{
+    font-family: var(--font-bold);
+}
+
+.content .aula-title .aula-line{
+    background-color: var(--color-light-blue);
+    width: 80%;
+}
+
+.content .aula-texts{
+    margin-top: 5vh;
+    font-family: var(--font-regular);
+    color: var(--color-black);
+}
+
+.content .aula-texts .one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .aula-texts .one img{
+    margin-left: -5vw;
+    margin-top: 5vh;
+}
+
+.content .aula-texts .one .texts{
+    width: 62%;
+}
+
+.content .aula-texts .one .text{
+    line-height: 45px;
+    margin-bottom: 5vh;
+    margin-top: 12vh;
+}
+
+.content .aula-texts .one .one-code{
+    width: 90%;
+    border: #111111 1px solid;
+    padding: 2vh 2vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    line-height: 50px;
+    margin-top: 10vh;
+}
+
+
+.content .aula-texts .two{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 8vw;
+}
+
+.content .aula-texts .two .text{
+    line-height: 45px;
+}
+
+.content .aula-texts .two .two-code{
+    width: 90%;
+    border: #111111 1px solid;
+    padding: 2vh 2vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    line-height: 50px;
+    margin-top: 10vh;
+}
+
+
+.btn-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.btn-content .btn-game{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #111111 1px solid;
+    text-decoration: none;
+    color: var(--color-black);
+    padding: 5px 80px;
+    border-radius: 15px;
+    transition: .1s;
+}
+
+.btn-content .btn-game .iconify{
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.btn-content .btn-game:hover{
+    background-color: #0F0054;
+    border: #0F0054 1px solid;
+    color: #fff;
+    font-family: var(--font-bold);
+    box-shadow: 0px 4px 7px rgba(15, 0, 84, 0.65);
+}

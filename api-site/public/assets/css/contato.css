@@ -1,0 +1,120 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-disabled: #c5c5c5a2;
+    --color-black: #111111;
+    --color-light-blue: #3264AE;
+    --color-blue: #0F0054;
+    --font-light: montserratLight;
+    --font-logo: logo;
+    --font-bold: montserratBold;
+    --font-regular: montserrat;
+    --font-thin: montserratThin;
+}
+
+@font-face {
+    font-family: montserratThin;
+    src: url("../fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: montserratBold;
+    src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+@font-face{
+    font-family: logo;
+    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+}
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('../background.png');
+}
+
+.content{
+    display: flex;
+    height: 80vh;
+}
+
+.content .form{
+    width: 35vw;
+    margin-left: 5vw;
+    color: var(--color-white);
+    height: 70vh;
+}
+
+.content .form .title h1{
+    font-family: var(--font-bold);
+    margin-top: 8vh;
+
+}
+
+.content .form .title p{
+    font-family: var(--font-thin);
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+}
+
+.content .form-group .iconify{
+    font-size: 25px;
+}
+
+.content .form .form-group{
+    display: flex;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.content .form-group input[type="text"],
+.content .form-group input[type="email"]{
+    width: 100%; 
+    height: 50px;
+    margin-left: -30px;
+    background: none;
+    padding-left: 40px;
+    color: var(--color-white);
+    font-family: var(--font-regular);
+    border:  1px solid var(--color-white);
+    border-radius: 10px;
+    outline: none;
+}
+
+.content .form-group input[type="text"]::placeholder,
+.content .form-group input[type="email"]::placeholder{
+    color: var(--color-white);
+}
+
+/* .form-group #input_message{
+    height: 120px;
+    display: flex;;
+} */
+
+.form .btn-enviar{
+    width: 100%; 
+    height: 50px;
+    background: none;
+    color: var(--color-white);
+    font-family: var(--font-regular);
+    border:  1px solid var(--color-white);
+    border-radius: 10px;
+    outline: none;
+}
+
+.form .btn-enviar:hover{
+    background-color: rgba(255, 255, 255, 0.514);
+}

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="../js/funcoes.js"></script>
+        <link rel="stylesheet" href="./assets/css/niveis.css">
+    </head>
+    <body id="teste" onload="validarSessao(), atualizacaoPeriodica()">
+        <div class="slider">
+            <button onclick="voltar()" id="back">
+                <span class="iconify" data-icon="ic:outline-arrow-back-ios"></span>
+            </button>
+            <button onclick="ir()" id="go"> 
+                <span class="iconify" data-icon="ic:outline-arrow-back-ios" data-rotate="180deg"></span>
+            </button>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="one">
+                    <a href="index.html">
+                        <img src="assets/img/btn-voltar.png"  >
+                    </a>
+                    <p>
+                        Olá, <span class="sp_nomeUser" id="span_nome">
+                            User
+                        </span>
+                    </p>
+                </div>
+                <div class="two">
+                    <p class="pontos">
+                        pontos: <span id="sp_pontosUser">0000</span>
+                    </p>
+                    <div class="empresa">
+                        <p class="logo">
+                            COSMOS
+                        </p>
+                        +
+                            <span class="iconify" data-icon="simple-icons:nasa" style="color: #d90404;" data-width="50"></span>   
+                    </div>                 
+                </div>
+            </div>
+            <div id="netuno">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            NETUNO
+                        </p>
+                        <p class="texts">
+                            Neste nível, nós sairemos de Netuno mas não 
+                            sem antes aprendermos sobre variaveis, não 
+                            esqueça de levar combustível com você
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                4.5
+                            </h4>
+                            <p>
+                                Bilhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                60.190
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                8°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="niveis('netuno-aula.html')" id="play" class="btn-play">
+                        INICIAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/planeta.png" alt="" class="netuno">
+                </div>
+            </div>
+            <div id="urano">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            URANO
+                        </p>
+                        <p class="texts">
+                            Nossa primeira parada, chegamos em Urano, aqui 
+                            aprenderemos a carregar muitas coisas em uma só 
+                            variavel, um novo amigo chamado Vetor, não esqueça 
+                            de nada em!
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                2.8
+                            </h4>
+                            <p>
+                                Bilhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                30.681
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                7°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="urano()" id="play" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/urano.png" alt="" class="urano">
+                </div> 
+            </div>
+            <div id="saturno">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            SATURNO
+                        </p>
+                        <p class="texts">
+                            Oba!! Você chegou em Saturno, estamos cada vez mais 
+                            perto do Sol, agora vamos aprender sobre condições.
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                1.4
+                            </h4>
+                            <p>
+                                Bilhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                10.760
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                6°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="saturno()" id="play" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/SATURNO.png" alt="" class="saturno">
+                </div> 
+            </div>
+            <div id="jupiter">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            JÚPITER
+                        </p>
+                        <p class="texts">
+                            Chegamos em Júpiter, neste nível você vai descobrir 
+                            que existem outros tipos de condições, vamos nessa? 
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                750
+                            </h4>
+                            <p>
+                                milhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                4.332
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                5°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="jupiter()" id="playJupiter" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/jupiter.png" alt="" class="jupiter">
+                </div> 
+            </div>
+            <div id="marte">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            MARTE
+                        </p>
+                        <p class="texts">
+                            Marte vai nos trazer bastante desafios, vamos aprender
+                             a usar as condições de formas diferentes. Bora lá?
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                225
+                            </h4>
+                            <p>
+                                milhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                687
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                4°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="MARTE()" id="playMarte" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/marte.png" alt="" class="marte">
+                </div> 
+            </div>
+            <div id="terra">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            TERRA
+                        </p>
+                        <p class="texts">
+                            Estamos na Terra, o nosso preciosos lar mas não 
+                            esqueça o foco na missão. Pegue combustivel e 
+                            comidas e continue sua jornada!
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                150
+                            </h4>
+                            <p>
+                                milhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                365
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                3°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="nivelTerra()" id="playTerra" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/terra.png" alt="" class="terra">
+                </div> 
+            </div>
+            <div id="venus">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            VÊNUS
+                        </p>
+                        <p class="texts">
+                            Estamos cada vez mais perto do Sol, dá para acreditar? 
+                            por aqui vamos ter uma nova ajuda para nossa missão, a 
+                            repetição.
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                105
+                            </h4>
+                            <p>
+                                milhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                225
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                2°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="nivelVenus()" id="playVenus" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/VêNUS.png" alt="" class="venus">
+                </div> 
+            </div>
+            <div id="mercurio">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            MÉRCURIO
+                        </p>
+                        <p class="texts">
+                            Dá para acreditar?!!! Nosso ultimo planeta antes do Sol. 
+                            Vamos lá, vamos pegar nosso último item pra nos ajudar 
+                            a completar a missão.
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                60
+                            </h4>
+                            <p>
+                                milhões de Kilômetros ate o Sol
+                            </p>
+                        </div>
+                        <div class="two">
+                            <h4>
+                                88
+                            </h4>
+                            <p>
+                                dias por ano
+                            </p>
+                        </div>
+                        <div class="three">
+                            <h4>
+                                1°
+                            </h4>
+                            <p>
+                                planeta do Sistema Solar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="nivelMercurio()" id="playMercurio" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/mercurio.png" alt="" class="mercurio">
+                </div> 
+            </div>
+            <div id="sol">
+                <div class="container">
+                    <div class="cta">
+                        <p class="title">
+                            SOL
+                        </p>
+                        <p class="texts">
+                            Nós conseguimos, chegamos ao Sol com ajuda dos nossos 
+                            amigos lógiquitos. Vamos finalizar essa ultima etapa
+                             e levar a mensagem para nossos amigos.
+                        </p>
+                    </div>
+                    <div class="infos">
+                        <div class="one">
+                            <h4>
+                                4.6
+                            </h4>
+                            <p>
+                                Bilhões de anos de idade
+                            </p>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button onclick="nivelSol()" id="playSol" class="btn-play">
+                        CONTINUAR JORNADA 
+                        <span class="iconify" data-icon="carbon:rocket"></span>
+                    </button>
+                </div>
+                <div class="planeta">
+                    <img src="assets/img/sol.png" alt="" class="sol">
+                </div> 
+            </div>
+            <div id="result">1</div> 
+        </div>
+    </body>
+</html>
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+<script> 
+    var content = 1;
+    function voltar(){
+        content = content - 1;
+        var cont = document.getElementById('teste');
+        var go = document.getElementById("go");
+        var back = document.getElementById("back");
+        // condicionais
+        if(content == 1){
+            result.innerHTML = "1";
+            back.disabled = true;
+            netuno.style.display = "block";
+            urano.style.display = "none";
+        }
+        else if(content == 2){
+            result.innerHTML = "2";
+            go.disabled = false;
+            netuno.style.display = "none";
+            urano.style.display = "block";
+            saturno.style.display = "none";
+        }
+        else if(content == 3){
+            result.innerHTML = "3";
+            go.disabled = false;
+            urano.style.display = "none";
+            saturno.style.display = "block";
+            jupiter.style.display = "none";
+        }
+        else if(content == 4){
+            result.innerHTML = "4";
+            go.disabled = false;
+            saturno.style.display = "none";
+            jupiter.style.display = "block";
+            marte.style.display = "none";
+        }
+        else if(content == 5){
+            result.innerHTML = "5";
+            go.disabled = false;
+            jupiter.style.display = "none";
+            marte.style.display = "block";
+            terra.style.display = "none";
+        }
+        else if(content == 6){
+            result.innerHTML = "6";
+            go.disabled = false;
+            marte.style.display = "none";
+            terra.style.display = "block";
+            venus.style.display = "none";
+        }
+        else if(content == 7){
+            result.innerHTML = "7";
+            go.disabled = false;
+            venus.style.display = "block";
+            mercurio.style.display = "none";
+        }
+        else if(content == 8){
+            result.innerHTML = "8";
+            go.disabled = false;
+            venus.style.display = "none";
+            mercurio.style.display = "block";
+            sol.style.display = "none";
+        }
+        else if(content == 9){
+            result.innerHTML = "9";
+            go.disabled = false;
+            mercurio.style.display = "none";
+            sun.style.display = "block";
+        }
+        else{
+            result.innerHTML = "1"
+        }
+
+        if(content == 9){
+            cont.style.backgroundImage = 'url("./assets/backSol.png")';
+        }else{
+            cont.style.backgroundImage = 'url("./assets/background.png")';
+        }
+
+    }
+    function ir(){
+        content = content + 1;
+        var cont = document.getElementById('teste');
+        var back = document.getElementById("back");
+        var go = document.getElementById("go");
+        
+
+        if(content == 1){
+            result.innerHTML = "1";
+            back.disabled = false;
+            netuno.style.display = "block";
+            urano.style.display = "none"
+        }
+        else if(content == 2){
+            result.innerHTML = "2";
+            back.disabled = false;
+            netuno.style.display = "none";
+            urano.style.display = "block";
+            saturno.style.display = "none";
+        }
+        else if(content == 3){
+            result.innerHTML = "3"
+            back.disabled = false;
+            urano.style.display = "none";
+            saturno.style.display = "block";
+            jupiter.style.display = "none";
+        }
+        else if(content == 4){
+            result.innerHTML = "4";
+            back.disabled = false;  
+            saturno.style.display = "none";
+            jupiter.style.display = "block";
+            marte.style.display = "none";
+        }
+        else if(content == 5){
+            result.innerHTML = "5";
+            back.disabled = false;
+            jupiter.style.display = "none";
+            marte.style.display = "block";
+            terra.style.display = "none";
+        }
+        else if(content == 6){
+            result.innerHTML = "6";
+            back.disabled = false;
+            marte.style.display = "none";
+            terra.style.display = "block";
+            venus.style.display = "none";
+        }
+        else if(content == 7){
+            result.innerHTML = "7";
+            back.disabled = false;
+            terra.style.display = "none";
+            venus.style.display = "block";
+            mercurio.style.display = "none";
+
+        }
+        else if(content == 8){
+            result.innerHTML = "8";
+            back.disabled = false;
+            venus.style.display = "none";
+            mercurio.style.display = "block";
+            sun.style.display = "none";
+            
+        }
+        else if(content == 9){
+            result.innerHTML = "9";
+            go.disabled = true;
+            mercurio.style.display = "none";
+            sol.style.display = "block";
+        }
+        else{
+            result.innerHTML = "1";
+            urano.style.display = "none";
+        }
+
+        if(content == 9){
+            cont.style.backgroundImage = 'url("./assets/backSol.png")';
+        }else{
+            cont.style.backgroundImage = 'url("./assets/background.png")';
+        }   
+    }
+    
+    function niveis(page){
+        window.location.href = page;
+    }
+
+</script>
