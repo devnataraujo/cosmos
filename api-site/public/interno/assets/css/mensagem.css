@@ -1,39 +1,18 @@
 :root{
-    --color-white: #FFFFFF;
-    --color-disabled: #c5c5c5a2;
-    --color-black: #111111;
-    --color-light-blue: #3264AE;
-    --color-blue: #0F0054;
-    --font-light: montserratLight;
-    --font-logo: logo;
-    --font-bold: montserratBold;
-    --font-regular: montserrat;
-    --font-thin: montserratThin;
+    --font-text: ibm;
+    --color-black: #000000;
+    --color-green: #1AB311;
+    --typeSpeed: 1s;
 }
 
 @font-face {
-    font-family: montserratThin;
-    src: url("../fonts/Montserrat-Thin.ttf");
+    font-family: ibm;
+    src: url("../fonts/IBMPlexMono-Bold.ttf");
 }
 
 @font-face {
-    font-family: montserratLight;
-    src: url("../fonts/Montserrat-Light.ttf");
-}
-
-@font-face {
-    font-family: montserrat;
-    src: url("../fonts/Montserrat-Regular.ttf");
-}
-
-@font-face {
-    font-family: montserratBold;
-    src: url("../fonts/Montserrat-Bold.ttf");
-}
-
-@font-face{
-    font-family: logo;
-    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+    font-family: ibmSemi;
+    src: url("../fonts/IBMPlexMono-SemiBold.ttf");
 }
 
 *{
@@ -43,11 +22,240 @@
 }
 
 body{
-    background-color: #000;
-    color: #1AB311;
+    background-color: var(--color-black);
+    color: var(--color-green);
+    font-family: var(--font-text);
+    text-align: left;
 }
 
 a{
-    color: #1AB311;
+    color: var(--color-green);
     text-decoration: none;
 }
+
+span{
+    font-size: 1.5rem;
+    margin-top: 5vh;
+}
+
+span, h1{
+    letter-spacing: 2px;
+    line-height: 2;
+}
+.content{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 10vw;
+}
+
+.head{
+    height: 50px;
+    margin-left: 90vw;
+}
+
+.head .iconify{
+    font-size: 50px;   
+    margin-top: 2vh;
+}
+
+.btn-aceitar{
+    border: solid 2px var(--color-green);
+    padding: 20px 100px 20px 100px;
+    margin-top: 5vh;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+h1, .lineOne, .lineTwo, .lineThree, .lineFour, .lineFive, .lineSix, .lineSeven, .lineEight{
+    font-size:  1.5rem;
+    position: relative;
+    width: max-content;
+    padding-bottom: 2px;
+}
+
+h1::before, 
+h1::after,
+.lineOne::after,
+.lineOne::before,
+.lineTwo:after,
+.lineTwo:before,
+.lineThree::before,
+.lineThree::after,
+.lineFour::after,
+.lineFour::before,
+.lineFive::after,
+.lineFive::before,
+.lineSix::before,
+.lineSix::after,
+.lineSeven::before,
+.lineSeven::after,
+.lineEight::before,
+.lineEight::after{
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute; 
+}
+
+h1::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(40) 750ms forwards;
+}
+
+h1::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(40) 750ms  forwards,
+        piscar 750ms steps(40) infinite;
+    height: 40px;
+}
+
+
+.lineOne::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(17) 4s forwards;
+    animation-delay: 2s;
+
+}
+
+.lineOne::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(17) 4s  forwards,
+        piscar 750ms steps(17) infinite;
+    height: 40px;
+    animation-delay: 2s;
+}
+
+.lineTwo::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(66) 4s forwards;
+    animation-delay: 3.5s;
+}
+
+.lineTwo::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(66) 4s  forwards,
+        piscar 750ms steps(66) infinite;
+    height: 40px;
+    animation-delay: 3.5s;
+}
+
+.lineThree::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(32) 4s forwards;
+    animation-delay: 5s;
+}
+
+.lineThree::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(32) 4s  forwards,
+        piscar 750ms steps(32) infinite;
+    height: 40px;
+    animation-delay: 5s;
+}
+
+.lineFour::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(64) 4s forwards;
+    animation-delay: 6.5s;
+}
+
+.lineFour::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(64) 4s  forwards,
+        piscar 750ms steps(64) infinite;
+    height: 40px;
+    animation-delay: 6.5s;
+}
+
+
+.lineFive::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(64) 4s forwards;
+    animation-delay: 8s;
+}
+
+.lineFive::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(64) 4s  forwards,
+        piscar 750ms steps(64) infinite;
+    height: 40px;
+    animation-delay: 8s;
+}
+
+.lineSix::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(12) 4s forwards;
+    animation-delay: 9s;
+}
+
+.lineSix::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(12) 4s  forwards,
+        piscar 750ms steps(12) infinite;
+    height: 40px;
+    animation-delay: 9s;
+}
+
+.lineSeven::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(46) 4s forwards;
+    animation-delay: 10.5s;
+}
+
+.lineSeven::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(46) 4s  forwards,
+        piscar 750ms steps(46) infinite;
+    height: 40px;
+    animation-delay: 10.5s;
+}
+
+.lineEight::before{
+    background: var(--color-black);
+    animation: type var(--typeSpeed) steps(46) 4s forwards;
+    animation-delay: 12s;
+}
+
+.lineEight::after{
+    width: 0.125em;
+    background: var(--color-green);
+    animation: 
+        type var(--typeSpeed)  steps(46) 4s  forwards,
+        piscar 750ms steps(46) infinite;
+    height: 40px;
+    animation-delay: 12s;
+}
+
+@keyframes type{
+    to{ 
+        left: 100%;
+    }
+}
+
+@keyframes piscar{
+    to{
+        background: transparent;
+    }
+}
+
