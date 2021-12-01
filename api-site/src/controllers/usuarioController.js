@@ -7,21 +7,72 @@ function testar(req, res) {
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
-function listar(req, res) {
-    usuarioModel.listar()
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
+
+function verificar(req, res) {
+
+    var idUsuario = req.body.id;
+    var idNivel = req.body.nivel;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (idNivel == undefined) {
+        res.status(400).send("O nível está indefinido!");
+    } else {
+        usuarioModel.verificar(idUsuario, idNivel)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    } 
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar a verificação! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function pontuar(req, res) {
+    var id = req.body.id;
+    var nivel = req.body.nivel;
+    var pontos = req.body.pontos;
+    var status = req.body.status;
+    var horario = req.body.horario;
+
+    console.log("data de nascimento que chegou: " + id);
+
+
+    if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (pontos == undefined) {
+        res.status(400).send("Seus pontos estão undefined!");
+    } else {
+        usuarioModel.pontuar(id, nivel, pontos, status, horario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
 }
 
 function entrar(req, res) {
@@ -97,6 +148,7 @@ function cadastrar(req, res) {
 module.exports = {
     entrar,
     cadastrar,
-    listar,
-    testar
+    pontuar,
+    testar,
+    verificar
 }

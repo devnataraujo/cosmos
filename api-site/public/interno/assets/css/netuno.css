@@ -1,48 +1,49 @@
-:root{
-    --color-white: #FFFFFF;
-    --color-disabled: #c5c5c5a2;
-    --color-black: #111111;
-    --font-light: montserratLight;
-    --font-logo: logo;
-    --font-bold: montserratBold;
-    --font-regular: montserrat;
-    --font-thin: montserratThin;
-    --color-light-blue: #3264AE;
-}
+    :root{
+        --color-white: #FFFFFF;
+        --color-disabled: #c5c5c5a2;
+        --color-line: #A1A1A1;
+        --color-black: #111111;
+        --font-light: montserratLight;
+        --font-logo: logo;
+        --font-bold: montserratBold;
+        --font-regular: montserrat;
+        --font-thin: montserratThin;
+        --color-light-blue: #3264AE;
+    }
 
-@font-face {
-    font-family: montserratThin;
-    src: url("../fonts/Montserrat-Thin.ttf");
-}
+    @font-face {
+        font-family: montserratThin;
+        src: url("../fonts/Montserrat-Thin.ttf");
+    }
 
-@font-face {
-    font-family: montserratLight;
-    src: url("../fonts/Montserrat-Light.ttf");
-}
+    @font-face {
+        font-family: montserratLight;
+        src: url("../fonts/Montserrat-Light.ttf");
+    }
 
-@font-face {
-    font-family: montserrat;
-    src: url("../fonts/Montserrat-Regular.ttf");
-}
+    @font-face {
+        font-family: montserrat;
+        src: url("../fonts/Montserrat-Regular.ttf");
+    }
 
-@font-face {
-    font-family: montserratBold;
-    src: url("../fonts/Montserrat-Bold.ttf");
-}
+    @font-face {
+        font-family: montserratBold;
+        src: url("../fonts/Montserrat-Bold.ttf");
+    }
 
-@font-face{
-    font-family: logo;
-    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
-}
+    @font-face{
+        font-family: logo;
+        src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+    }
 
-*{
-    margin: 0;
-    border: 0;
-}
+    *{
+        margin: 0;
+        border: 0;
+    }
 
-body{
-    font-family: var(--font-regular);
-    
+    body{
+        font-family: var(--font-regular);
+        
 }
 .content{
     background-color: var(--color-white);
@@ -51,7 +52,8 @@ body{
     padding: 10vh 5vw;
 }
 
-.content .aula-title{
+.content .aula-title,
+.content .game-title{
     display: flex;
     color: var(--color-light-blue);
     justify-content: space-between;
@@ -64,11 +66,13 @@ body{
 }
 
 
-.content .aula-title h3{
+.content .aula-title h3,
+.content .game-title h3{
     font-family: var(--font-bold);
 }
 
-.content .aula-title .aula-line{
+.content .aula-title .aula-line,
+.content .game-title .game-line{
     background-color: var(--color-light-blue);
     width: 80%;
 }
@@ -169,4 +173,169 @@ body{
     color: #fff;
     font-family: var(--font-bold);
     box-shadow: 0px 4px 7px rgba(15, 0, 84, 0.65);
+}
+
+.content .game-intro{
+    font-family: var(--font-regular);
+    margin-top: 5vh;
+    line-height: 2;
+}
+
+.content .game-content{
+    margin-top: 5vh;
+    padding: 8vh 5vw;
+    border: 1px solid var(--color-line);
+    border-radius: 20px;
+}
+
+.content .game-content .game-example{
+    margin-bottom: 5vh;
+    line-height: 3;
+}
+
+.content .game-content .game-example .value{
+    margin-left: 2vw;
+}
+
+.content .game-content .game-teste{
+    border-top: 1px solid var(--color-line);
+    padding-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .game-content .game-teste .intro{
+    font-family: var(--font-regular);
+    line-height: 2;
+    max-width: 40vw;
+}
+
+.content .game-content .game-teste .grid-game{
+    display: grid;
+    grid-template-columns: 10vw 20vw;
+    grid-template-rows: 20vh 20vh 20vh;
+    align-items: center;
+}
+
+/* 
+.content .game-content .game-teste label{
+    width: 50px;
+    background-color:red;
+} */
+.content .game-content .game-teste #slc_foguete,
+.content .game-content .game-teste #inp_caixa:placeholder-shown,
+.content .game-content .game-teste #inp_macas:placeholder-shown{
+    border: var(--color-line) 1px solid;
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+    color: var(--color-line);
+    font-family:  var(--font-regular);
+    border-radius: 8px;
+
+}
+
+
+.content .game-content .game-teste #slc_foguete:active,
+.content .game-content .game-teste #inp_caixa:active,
+.content .game-content .game-teste #inp_macas:active,
+.content .game-content .game-teste #slc_foguete:focus,
+.content .game-content .game-teste #inp_caixa:focus,
+.content .game-content .game-teste #inp_macas:focus,
+.content .game-content .game-teste #inp_macas:not(:placeholder-shown),
+.content .game-content .game-teste #inp_caixa:not(:placeholder-shown),
+.content .game-content .game-teste #slc_foguete:valid{
+    outline:solid 3px rgba(36, 41, 109, 0.62);
+    border: solid 2px #24296D;
+    color: #24296D;
+    height: 50px;
+    padding-left: 10px;
+    font-family:  var(--font-regular);
+    border-radius: 8px;
+    transition: .1s linear;
+    width: 100%;
+
+}
+
+
+.game-purchase{
+    display:  flex;
+    justify-content: center;
+    margin-top:7vh;
+
+}
+
+
+.btn-comprar,
+.next-mission button,
+.btn-disabled{
+    background: none;
+    color: var(--color-line);
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border: var(--color-line) solid 1px;
+    width: 300px;
+    border-radius: 8px;
+    
+}
+
+
+.btn-comprar .iconify{
+    font-size: 16px;
+
+}
+
+.btn-comprar:hover,
+.next-mission button:hover{
+    background-color: #0F0054;
+    border: #0F0054 solid 1px;
+    outline:solid 3px rgba(36, 41, 109, 0.62);
+    color: #fff;
+    transition: .1s linear;
+    font-family: var(--font-bold);
+}
+
+.next-mission{
+    display: none;
+    justify-content: flex-end;
+    margin-top: 5vh;
+}
+.next-mission button .iconify{
+    font-size: 18px;
+}
+
+#dica{
+    background: #24296D;
+    font-family: var(--font-light);
+    border-radius: 15px;
+    width: 300px;
+    height: auto;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    display: none;
+    transition: .1s linear;
+}
+
+#dica:after{ /*Triangulo*/
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #24296D;
+    top: -20px; 
+    left: 20%;
+}
+
+
+#avisoFoguete,
+#avisoCaixa,
+#avisoMacas{
+    font-size: 0.8rem;
+    font-family: var(--font-light);
 }

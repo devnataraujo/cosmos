@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <script src="../js/funcoes.js"></script>
-        <!-- <link rel="stylesheet" href="./assets/css/niveis.css"> -->
         <link rel="stylesheet" href="./assets/css/universal.css">
         <link rel="stylesheet" href="./assets/css/netuno.css">
     </head>
@@ -14,7 +13,7 @@
         <div class="header">
             <div class="one">
                 <a href="index.html">
-                    <img src="assets/img/btn-voltar.png"  >
+                    <img src="assets/img/btn-voltar.png">
                 </a>
                 <p>
                     Olá, <span class="sp_nomeUser" id="span_nome">
@@ -31,52 +30,189 @@
                         COSMOS
                     </p>
                     +
-                        <span class="iconify" data-icon="simple-icons:nasa" style="color: #d90404;" data-width="50"></span>   
-                </div>                 
+                    <span class="iconify" data-icon="simple-icons:nasa" style="color: #d90404;" data-width="50"></span>
+                </div>
             </div>
         </div>
         <div class="content">
-            <div class="aula-title">
+            <div class="game-title">
                 <h3>Netuno e as variaveis</h3>
-                <hr size="5" noshade class="aula-line">
+                <hr size="5" noshade class="game-line">
             </div>
-            <div class="aula-texts">
-                <section class="one">
-                    <img src="./assets/img/netuno-aula.png">
-                    <div class="texts">
-                        <p class="text primary">
-                            A primeira coisa que precisamos aprender antes de sairmos de Netuno é sobre as variáveis.
-                            Variaveis são caixinhas que guardam coisas. Essas caixinhas são pequenas e só deixam guardam uma unica coisa.
-                            Você pode usar assim:
-                        </p>
-                        <div class="one-code">
-                            <p>var caixaUm = “Banana”</p>
-                            <p>var caixaDois = “Maçã”</p>
-                        </div>
-                        <p class="text">
-                            Quando você precisar da Banana é so você pegar a <b>caixaUm</b> <br>
-                            Quando você precisar da Maçã é só pegar a <b>caixaDois</b>
-                        </p>
-                    </div>
-                </section>
-                <section class="two">
-                    <p class="text">
-                        Outra coisa legal para saber sobre as variaveis é que elas podem guardar coisas diferentes como numeros e  palavras, e no nosso caso os objetos da missão.
-                        Nós tambem podemos dar o nome que quisermos para as variaveis
+            <p class="game-intro">
+                Antes de sair daqui, precisamos levar combustível para a nave,
+                comida na caixa e 5 maçãs comer durante a próxima viagem,
+                eu já peguei o meu no mercadinho Constelação:
+            </p>
+            <div class="game-content">
+                <div class="game-example">
+                    <p>
+                        var foguete = <span class="value">"Combustível"</span>
                     </p>
-                    <div class="two-code">
-                        <p>var Foguete = “Combustivel”</p>
-                        <p>var Idade = 5</p>
-                    </div>
-                </section>
-                <div class="btn-content">
-                    <a href="netuno-game.html" class="btn-game">
-                        Ir para a missão
-                        <span class="iconify" data-icon="bx:bx-rocket"></span>
-                    </a>
+                    <p>
+                        var caixa = <span class="value">"Hamburguer"</span>
+                    </p>
+                    <p>
+                        var maçãs = <span class="value">5</span>
+                    </p>
                 </div>
+                <div class="game-teste">
+                    <div>
+                        <p class="intro">
+                            Agora é sua vez, pegue o combustível no mercadinho e leva sua comida preferida:
+                        </p>
+                        <div class="grid-game" ">
+                                <label for=" slc_foguete">var foguete = </label>
+                            <div>
+                                <select id="slc_foguete" required>
+                                    <option value="">escolha aqui</option>
+                                    <option value="batata">Batata</option>
+                                    <option value="vassoura">Vassoura</option>
+                                    <option value="combustivel">Combustível</option>
+                                </select>
+                                <span id="avisoFoguete"></span>
+                            </div>
+                            <label for="inp_caixa">var caixa = </label>
+                            <div>
+                                <input type="text" id="inp_caixa" placeholder="sua comida preferida">
+                                <span id="avisoCaixa"></span>
+                            </div>
+                            <label for="inp_macas">var maçãs = </label>
+                            <div>
+                                <input type="text" id="inp_macas" placeholder="quantas maçãs?">
+                                <span id="avisoMacas"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./assets/img/astronaut-eat.png" alt="">
+                        <div id="dica">
+                            <p id="dicaText"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="game-purchase">
+                <button class="btn-comprar" onclick="comprar()" id="btn_verifica">
+                    COMPRAR ITENS <span class="iconify" data-icon="akar-icons:cart"></span>
+                </button>
+            </div>
+            <div class="next-mission" id="next">
+                <button onclick="pontua()">
+                    IR PARA A PRÓXIMA MISSÃO <span class="iconify" data-icon="grommet-icons:form-next-link"></span>
+                </button>
             </div>
         </div>
     </body>
 <html>
+
+<!-- <script src="/api-site/src/routes/usuarios/pontuar"></script> -->
+<script src="./js/game.js"></script>
 <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+<script>
+    pontuacao = 0;
+    pontosPositivos = 0;
+    pontosSubtrair = 0;
+    horario = '';
+
+    function comprar() {
+        dicaText.innerHTML = "";
+        dica.style.display = "none";
+        avisoMacas.innerHTML = "";
+        avisoCaixa.innerHTML = "";
+        avisoFoguete.innerHTML = "";
+
+        var foguete = slc_foguete.value;
+        var caixa = inp_caixa.value;
+        var macas = Number(inp_macas.value);
+        
+
+        //dicas
+        if (foguete == "batata") {
+            dicaText.innerHTML += "Batatas produzem energia mas não fazem astronautas voarem";
+            dica.style.display = 'flex';
+            pontosSubtrair = pontosSubtrair + 5;
+
+        } else if (foguete == "vassoura") {
+            dicaText.innerHTML += "As unicas que voam com vassouras são as bruxas";
+            dica.style.display = 'flex';
+            pontosSubtrair = pontosSubtrair + 5;
+
+        }
+
+        //verificação
+        if (foguete == 'combustivel' && caixa.length > 0 && macas == 5) {
+            dicaText.innerHTML = "Oba! Você conseguiu pegar todas as coisas, vamos seguir viagem!";
+            dica.style.display = 'flex';
+            next.style.display = 'flex';
+            btn_verifica.disabled = true;
+            btn_verifica.className = 'btn-disabled';
+
+            var data = new Date();
+            var dia = String(data.getDate()).padStart(2, '0');
+            var mes = String(data.getMonth() + 1).padStart(2, '0');
+            var ano = data.getFullYear();
+            var horas = data.getHours();
+            var minutos = data.getMinutes();
+
+
+            dataAtual = ano + '-' + mes + '-' + dia + ' ' + horas + ':' + minutos;
+            horario = dataAtual;
+            pontosPositivos = pontosPositivos + 100;
+        } else if (foguete == "") {
+            avisoFoguete.innerHTML = "O tanque está vazio";
+        } else if (caixa == "") {
+            avisoCaixa.innerHTML = "Sua caixa esta vazia";
+        } else if (macas == "" || macas <= 0) {
+            avisoMacas.innerHTML = "Cadê as maçãs?";
+        } else if (macas <= 4) {
+            avisoMacas.innerHTML = "Ta faltando maçã";
+            pontosSubtrair = pontosSubtrair + 3;
+        }
+        // } else {
+        //     dicaText.innerHTML = "Você deve levando algo errado";
+        //     dica.style.display = 'flex';
+        //     pontosSubtrair = pontosSubtrair + 1;
+        // }
+
+        pontuacao = pontosPositivos - pontosSubtrair;
+        console.log(pontuacao);
+    }
+
+    function pontua(){
+       var idVar = sessionStorage.ID_USUARIO;
+       var nivelVar = 1;
+       var pontosVar = pontuacao;
+       var statusVar = 'sim';
+       var horasVar = horario ;
+
+       console.log(idVar , nivelVar, pontosVar, statusVar, horasVar);
+
+        fetch("/usuarios/pontuar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: idVar,
+                nivel: nivelVar,
+                pontos: pontosVar,
+                status: statusVar,
+                horario: horasVar
+                
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Nivel pontuado com sucesso");
+                window.location = "niveis.html";
+            } else { 
+                throw ('Houve um erro ao tentar realizar a pontuação');
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+</script>
