@@ -1,1 +1,118 @@
-tem coisa aqui
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/funcoes.js"></script>
+    <!-- <link rel="stylesheet" href="./assets/css/niveis.css"> -->
+    <link rel="stylesheet" href="./assets/css/universal.css">
+    <link rel="stylesheet" href="./assets/css/urano.css">
+</head>
+
+<body id="teste" onload="validarSessao(), atualizacaoPeriodica()">
+    <header class="header">
+        <div class="one">
+            <a href="index.html">
+                <img src="assets/img/btn-voltar.png">
+            </a>
+            <p>
+                Olá, <span class="sp_nomeUser" id="span_nome">
+                    User
+                </span>
+            </p>
+        </div>
+        <div class="two">
+            <p class="pontos">
+                pontos: <span id="sp_pontosUser">0000</span>
+            </p>
+            <div class="empresa">
+                <p class="logo">
+                    COSMOS
+                </p>
+                +
+                <span class="iconify" data-icon="simple-icons:nasa" style="color: #d90404;" data-width="50"></span>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <div class="aula-title">
+            <h3>Urano e os vetores</h3>
+            <hr size="5" noshade class="aula-line">
+        </div>
+        <div class="aula-texts">
+            <section class="one">
+                <div class="texts">
+                    <p class="first">
+                        Nessa nova missão, vamos precisar levar muitas coisas, mas antes disso vamos conhecer os primos
+                        das variáveis, os arrays.
+                        Ele são como elas mas deixam você levar um monte de coisa diferente (ou igual) num lugar só.
+
+                    </p>
+                    <span>
+                        Como por exemplo:
+                    </span>
+                    <div class="one-code">
+                        <div class="head-code">
+                            <div class="circles">
+                                <div class="green"></div>
+                                <div class="red"></div>
+                                <div class="yellow"></div>
+                            </div>
+                            <hr size="3" noshade class="code-line">
+                        </div>
+                        <div class="texts-code">
+                            <p>var caixaUm = </p>
+                            <p>“Banana”</p>
+                            <p>var caixaDois = </p>
+                            <p>“Maçã”</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/img/Group (3).png" alt="">
+            </section>
+            <section class="two">
+                <div class="texts">
+                    <p class="first ">
+                        Então quando você precisar pegar as frutas, não vai precisar guardar cada uma em uma caixa,
+                        você pode guardar todas na mesma caixa se usar o vetor
+                    </p>
+                    <p class="second">
+                        Assim como nas variaveis, você tambem pode colocar coisas
+                        diferentes, sejam numeros, palavras ou os nossos objetos da missão.
+                        Como por exemplo:
+                    </p>
+                </div>
+                <div class="two-code">
+                    <div class="head-code">
+                        <div class="circles">
+                            <div class="green"></div>
+                            <div class="red"></div>
+                            <div class="yellow"></div>
+                        </div>
+                        <hr size="3" noshade class="code-line">
+                    </div>
+                    <div class="texts-code">
+                        <p>
+                            var endereço = [ <br>
+                            “Rua dos Aliens”, <br>
+                            125, <br>
+                            “Planeta dos Aliens” <br>
+                            ];
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="btn">
+            <a href="urano-game.html" class="btn-next">
+                IR PARA A MISSÃO <span class="iconify" data-icon="carbon:rocket"></span>
+            </a>
+        </div>
+    </main>
+    
+</body>
+<html>
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>

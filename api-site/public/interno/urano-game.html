@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/funcoes.js"></script>
+    <!-- <link rel="stylesheet" href="./assets/css/niveis.css"> -->
+    <link rel="stylesheet" href="./assets/css/universal.css">
+    <link rel="stylesheet" href="./assets/css/urano.css">
+</head>
+
+<body id="teste" onload="validarSessao(), atualizacaoPeriodica()">
+    <header class="header">
+        <div class="one">
+            <a href="index.html">
+                <img src="assets/img/btn-voltar.png">
+            </a>
+            <p>
+                Olá, <span class="sp_nomeUser" id="span_nome">
+                    User
+                </span>
+            </p>
+        </div>
+        <div class="two">
+            <p class="pontos">
+                pontos: <span id="sp_pontosUser">0000</span>
+            </p>
+            <div class="empresa">
+                <p class="logo">
+                    COSMOS
+                </p>
+                +
+                <span class="iconify" data-icon="simple-icons:nasa" style="color: #d90404;" data-width="50"></span>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <div class="aula-title">
+            <h3>Urano e os vetores</h3>
+            <hr size="5" noshade class="aula-line">
+        </div>
+        <section class="example">
+            <p class="intro">
+                Depois de aprender tanta coisa legal sobre vetor, 
+                chegou a hora de ir embora de Urano, mas não sem 
+                antes de pegarmos algumas coisas. O Alien Deltalino 
+                nos deu bolsas pra levar mais coisas de uma vez. 
+                Precisamos levar combustível, patins e banana .
+            </p>
+            <div class="one-code">
+                <div class="head-code">
+                    <div class="circles">
+                        <div class="green"></div>
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                    </div>
+                    <hr size="3" noshade class="code-line">
+                </div>
+                <div class="texts-code">
+                    <p> var bolsa = [</p>
+                    <p class="var">‘Combustível’,</p>
+                    <p class="var"> ‘Patins’,</p>
+                    <p class="var">‘Banana’</p>
+                    ]
+                </div>
+            </div>
+        </section>
+        <div class="linha">
+            <hr size="3" noshade class="game-line">
+        </div>         
+        <section class="game">
+            <div class="game-content">
+                <p>
+                    Seu amigo astronauta te disse o que levar, não esqueça 
+                    nenhum dos itens viu? 
+                </p>
+                <div class="one-code">
+                    <div class="head-code">
+                        <div class="circles">
+                            <div class="green"></div>
+                            <div class="red"></div>
+                            <div class="yellow"></div>
+                        </div>
+                        <hr size="3" noshade class="code-line">
+                    </div>
+                    <div class="texts-code">
+                        <p>var bolsa = [</p>
+                        <div id="exibicao">
+                            
+                        </div>
+                        ]
+                    </div>
+                </div>
+                <div class="btns">
+                    <!-- <button class="btn-cleanLine" onclick="cleanLine()">
+                        <span class="iconify" data-icon="feather:delete"></span>
+                    </button> -->
+                    <button class="btn-cleanAll" onclick="cleanAll()">
+                        <span class="iconify" data-icon="fluent:delete-24-regular"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="astronauta">
+                <img src="assets/img/astroUrano.png" alt="">
+                <div id="dica">
+                    <p id="dicaText"></p>
+                </div>
+            </div>
+        </section>
+        <section class="botoes">
+            <button class="btn-valores" onclick="valores('banana')">
+                'banana'
+            </button>
+            <button class="btn-valores" onclick="valores('batata,')">
+                'batata',
+            </button>
+            <button class="btn-valores" onclick="valores('patins,')">
+                'patins',
+            </button>
+            <button class="btn-valores" onclick="valores('patinete,')">
+                'patinete',
+            </button>
+            <button class="btn-valores" onclick="valores('combustivel,')">
+                'combustível',
+            </button>
+            <button class="btn-valores" onclick="valores('vassoura,')">
+                'vassoura',
+            </button>
+            <button class="btn-valores" onclick="valores('arvore,')">
+                'arvore',
+            </button>
+            <button class="btn-valores" onclick="valores('bicicleta,')">
+                'bicicleta',
+            </button>
+        </section>
+        <div class="game-purchase">
+            <button class="btn-comprar" onclick="verificar()" id="btn_verifica">
+                COMPRAR ITENS <span class="iconify" data-icon="akar-icons:cart"></span>
+            </button>
+        </div>
+        <div class="next-mission" id="next">
+            <button onclick="pontua()">
+                IR PARA A PRÓXIMA MISSÃO <span class="iconify" data-icon="grommet-icons:form-next-link"></span>
+            </button>
+        </div>    
+    </main>
+    
+</body>
+<html>
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+<script>
+    pontuacao = 0;
+    pontosPositivos = 0;
+    pontosSubtrair = 0;
+    horario = '';
+    vetorPalavras = [];
+
+    function valores(palavra){
+        var palavras = palavra;
+        exibicao.innerHTML += `
+            <p class="var"> '${palavras}'</p>
+        `;
+        vetorPalavras.push(palavras);
+        console.log(vetorPalavras);
+    }
+
+    function cleanAll(){
+        exibicao.innerHTML = '';
+        vetorPalavras = [];
+        console.log(vetorPalavras);
+    }
+
+    function verificar(){
+        if(vetorPalavras.length > 3){
+            dicaText.innerHTML = "Há muitos itens na bolsa, não dá pra levar";
+            dica.style.display = 'flex';
+            pontosSubtrair = pontosSubtrair + 10;
+
+        }else if(vetorPalavras.length < 1){
+            dicaText.innerHTML = "Cadê as commpras?";
+            dica.style.display = 'flex';
+            pontosSubtrair = pontosSubtrair + 10;
+        }else if(vetorPalavras.length = 3){
+            var banana = false;
+            var combustivel = false;
+            var patins = false;
+
+            for(var i = 0; i < vetorPalavras.length; i++){
+                if(vetorPalavras[i] == 'banana'){
+                    banana = true;
+                }
+                if(vetorPalavras[i] == 'combustivel,'){
+                    combustivel = true;
+                }
+                if(vetorPalavras[i] == 'patins,'){
+                    patins = true;
+                }
+
+                if(banana == true && combustivel == true && patins == true){
+                    dicaText.innerHTML = "UHUUU! Você conseguiu todos os itens, vamos seguir viagem!";
+                    dica.style.display = 'flex';
+                    document.getElementById('next').style.display = 'flex';
+
+                    var data = new Date();
+                    var dia = String(data.getDate()).padStart(2, '0');
+                    var mes = String(data.getMonth() + 1).padStart(2, '0');
+                    var ano = data.getFullYear();
+                    var horas = data.getHours();
+                    var minutos = data.getMinutes();
+
+
+                    dataAtual = ano + '-' + mes + '-' + dia + ' ' + horas + ':' + minutos;
+                    horario = dataAtual;
+                    pontosPositivos = pontosPositivos + 100;
+                }else{
+                    dicaText.innerHTML = "Eita, tem alguma coisa errada";
+                    dica.style.display = 'flex';
+                }            
+            }
+        }else{
+            alert("opa, tem alguma coisa errada")
+            pontosSubtrair = pontosSubtrair + 10;
+        }
+
+        pontuacao = pontosPositivos - pontosSubtrair;
+        console.log(pontuacao)
+    }
+   
+    function pontua(){
+       var idVar = sessionStorage.ID_USUARIO;
+       var nivelVar = 2;
+       var pontosVar = pontuacao;
+       var statusVar = 'sim';
+       var horasVar = horario ;
+
+       console.log(idVar , nivelVar, pontosVar, statusVar, horasVar);
+
+        fetch("/usuarios/pontuar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: idVar,
+                nivel: nivelVar,
+                pontos: pontosVar,
+                status: statusVar,
+                horario: horasVar
+                
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Nivel pontuado com sucesso");
+                window.location = "niveis.html";
+            } else { 
+                throw ('Houve um erro ao tentar realizar a pontuação');
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+</script>
+</script>
