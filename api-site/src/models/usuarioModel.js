@@ -43,9 +43,21 @@ function cadastrar(nome,  naturalidade, dataNascimento, nickname, email, senha) 
     return database.executar(instrucao);
 }
 
+function ranking(){
+    instrucaoSql = `
+        select sum(pontos) as sumPontos, nickname from usuario
+        join pontos on fkusuario = idUsuario
+        group by horarioEntrada and fkUsuario;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     pontuar, 
-    verificar
+    verificar,
+    ranking
 };
+

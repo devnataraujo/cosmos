@@ -4,9 +4,120 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Ranking</title>
+        <link rel="stylesheet" href="assets/css/ranking.css">
     </head>
     <body>
-        hello world
+        <div class="header">
+            <a href="index.html" class="btn-back">
+                <span class="iconify" data-icon="ep:back"></span>
+            </a>
+        </div>
+        <div class="content">
+            <div class="ranking">
+                <div class="title">
+                    Ranking
+                </div>
+                <div class="ranking-content" id="ranking_content">
+                    
+                </div>
+            </div>
+        </div>
     </body>
+    
 </html>
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+<script>
+    
+    function atualizarRanking() {
+        fetch('/usuarios/ranking').then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                        ranking_content.innerHTML = "Nenhum resultado encontrado."
+                        throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    ranking_content.innerHTML = "";
+                    for(var i = 0; i < resposta.length; i++){
+                        if(i == 0){
+                            console.log("to aqui")
+                            ranking_content.innerHTML += `
+                            <div class="user">
+                                <div class="colocacao">
+                                    <img src="assets/img/ouro.png" alt="">
+                                </div>
+                                <div class="user-infos">
+                                    <p class="name">
+                                        ${resposta[i].nickname}
+                                    </p>
+                                    <p class="pontos">
+                                        ${resposta[i].sumPontos}
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                        }else if(i == 1){
+                            ranking_content.innerHTML += `
+                            <div class="user">
+                                <div class="colocacao">
+                                    <img src="assets/img/prata.png" alt="">
+                                </div>
+                                <div class="user-infos">
+                                    <p class="name">
+                                        ${resposta[i].nickname}
+                                    </p>
+                                    <p class="pontos">
+                                        ${resposta[i].sumPontos}
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                        }else if(i == 2){
+                            ranking_content.innerHTML += `
+                            <div class="user">
+                                <div class="colocacao">
+                                    <img src="assets/img/brone.png" alt="">
+                                </div>
+                                <div class="user-infos">
+                                    <p class="name">
+                                        ${resposta[i].nickname}
+                                    </p>
+                                    <p class="pontos">
+                                        ${resposta[i].sumPontos}
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                        }else{
+                            console.log(resposta[i]);
+                            ranking_content.innerHTML += `
+                                <div class="user">
+                                    <div class="colocacao">
+                                            ${i+1}
+                                        </div>
+                                    <div class="user-infos">
+                                        <p class="name">
+                                            ${resposta[i].nickname}
+                                        </p>
+                                        <p class="pontos">
+                                            ${resposta[i].sumPontos}
+                                        </p>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+         
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+    atualizarRanking();
+</script>

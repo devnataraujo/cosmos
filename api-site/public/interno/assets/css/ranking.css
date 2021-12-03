@@ -1,0 +1,132 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-disabled: #c5c5c5a2;
+    --color-line: #A1A1A1;
+    --color-black: #111111;
+    --font-light: montserratLight;
+    --font-logo: logo;
+    --font-bold: montserratBold;
+    --font-regular: montserrat;
+    --font-thin: montserratThin;
+    --color-light-blue: #3264AE;
+}
+
+@font-face {
+    font-family: montserratThin;
+    src: url("../fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: montserratLight;
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: montserratBold;
+    src: url("../fonts/Montserrat-Bold.ttf");
+}
+
+@font-face{
+    font-family: logo;
+    src: url("../fonts/MADE\ Evolve\ Sans\ Bold\ EVO\ \(PERSONAL\ USE\).otf")
+}
+
+*{
+    margin: 0;
+    border: 0;
+}
+
+body{
+    font-family: var(--font-regular);
+    background: url("../log.png");
+    background-size: cover;
+}
+
+.header{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2vw;
+}
+
+.header .btn-back{
+    border-radius: 50%;
+    border: solid 2px var(--color-white);
+    height: 30px;
+    width: 30px;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.content .ranking{
+    width: 60vw;
+    background: rgba(255, 255, 255, 0.63);
+    border: 8px solid #FFFFFF;
+    border-radius: 20px;
+    height: 80vh;
+    padding: 5vh 5vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content .ranking  .title{
+    margin-top: -10vh;
+    background: #fff;
+    height: 50px;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: #1D0056;
+    font-family: var(--font-bold);
+}
+
+.content .ranking .ranking-content{
+    margin-top: 8vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.content .ranking .ranking-content .user{
+    margin-top: 8vh;
+    display: flex;
+    background: #1D1460;
+    width: 50vw;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff;
+    align-items: space-between;
+}
+
+.content .ranking .ranking-content .user .user-infos{
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+
+.content .ranking .ranking-content .user .user-infos .name{
+    font-size: 2rem;
+}
+
+.content .ranking .ranking-content .user .user-infos .pontos{
+    font-size: 1.5rem;
+    margin-left: 30vw;
+}

@@ -14,12 +14,6 @@
             <div class="options">
                 <ul>
                     <li class="option">
-                        <a href="index.html">INICIO</a>
-                    </li>
-                    <li class="option">
-                        <a href="sobre.html">SOBRE</a>
-                    </li>
-                    <li class="option">
                         <a href="contato.html">CONTATO</a>
                     </li>
                     <li class="option">
@@ -44,6 +38,9 @@
                         <span class="iconify" data-icon="ant-design:user-outlined"></span>
                         <input type="text" id="input_nome" placeholder="escreva seu nome" autocomplete="off">
                     </div>
+                    <span class="aviso" id="aviso_nome">
+
+                    </span>
                 </div>
                 <div class="form-group">
                     <div class="form-col">
@@ -52,6 +49,9 @@
                             <span class="iconify" data-icon="fluent:mail-28-regular"></span>
                             <input type="email" id="input_email" placeholder="email@gmail.com" autocomplete="off">
                         </div>
+                        <span class="aviso" id="aviso_email">
+
+                        </span>
                     </div>
                     <div class="form-col">
                         <label for="input_nickname">NICKNAME</label>
@@ -59,6 +59,9 @@
                             <span class="iconify" data-icon="la:user-astronaut"></span>
                             <input type="text" id="input_nickname" placeholder="escolha um nome bem legal" autocomplete="off">
                         </div>
+                        <span class="aviso" id="aviso_nickname">
+
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -67,14 +70,22 @@
                         <div class="col-password">
                             <span class="iconify" data-icon="eva:lock-outline"></span>
                             <input type="password" id="input_senha" placeholder=".........." autocomplete="off">
+                            
                         </div>
+                        <span class="aviso" id="aviso_senha">
+
+                        </span>
                     </div>
                     <div class="form-col">
                         <label for="input_senha">CONFIRMAR SENHA</label>
                         <div class="col-confirmPassword">
                             <span class="iconify" data-icon="eva:lock-outline"></span>
                             <input type="password" id="input_confirmSenha" placeholder=".........." autocomplete="off">
+                            
                         </div>
+                        <span class="aviso" id="aviso_conSenha">
+
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -335,11 +346,18 @@
                                 <option value="Zimbabwe">Zimbabwe</option>
                                 <option value="Zâmbia">Zâmbia</option>
                             </select>
+                            
                         </div>
+                        <span class="aviso" id="aviso_naturalidade">
+
+                        </span>
                     </div>
                     <div class="form-col">
                         <label for="input_dataNascimento">DATA DE NASCIMENTO</label>
                         <input type="date" id="input_dataNascimento" autocomplete="off">
+                        <span class="aviso" id="aviso_data">
+
+                        </span>
                     </div>
                 </div>
                 <button onclick="cadastrar()" class="btn-cadastrar">CADASTRAR</button>
@@ -358,8 +376,35 @@
         var senhaVar = input_senha.value;
         var confirmarSenhaVar = input_confirmSenha.value;
 
-       
+        aviso_nome.innerHTML =""
+        aviso_conSenha.innerHTML = ""
+        aviso_senha.innerHTML = ""
+        aviso_data.innerHTML = ""
+        aviso_email.innerHTML = ""
+        aviso_nickname.innerHTML = ""
+        aviso_naturalidade.innerHTML = ""
 
+
+       if(nomeVar.length < 3){
+           aviso_nome.innerHTML = "nome pequeno demais"
+       }else if(nomeVar.length == 0 || nomeVar.trim().length == 0){
+           aviso_nome.innerHTML = "escreva seu lindo nome"
+       }else if(emailVar.indexOf("@") < 0 || emailVar.toLowerCase().indexOf(".com") < 0){
+           aviso_email.innerHTML = "email inválido"
+       }else if(nicknameVar.length == 0 || nicknameVar.trim().length == 0 || nicknameVar.length < 3){
+           aviso_nickname.innerHTML = "escolhe um nome mais legal poxa"
+       }else if(naturalidadeVar.length == 0 || naturalidadeVar.trim().length == 0){
+            aviso_naturalidade.innerHTML = 
+            " me diga de que país você é "
+       }else if(senhaVar.length == 0 || senhaVar.trim().length == 0 || senhaVar.length < 3){
+           aviso_senha.innerHTML = "que senha mixuruca é essa?"
+       }else if(confirmarSenhaVar.length == 0 || confirmarSenhaVar.trim().length == 0){
+        aviso_conSenha.innerHTML = "que senha mixuruca é essa?"
+       }else if(confirmarSenhaVar != senhaVar){
+           aviso_senha.innerHTML = "essa senha não é igual a outra"
+       }else if(dataNascimentoVar.length == 0 || dataNascimentoVar.trim().length == 0){
+            aviso_data.innerHTML = "digite sua data de nascimento "
+       }else{
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
@@ -387,7 +432,11 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
+       }
+
     }
+
+   
 </script>
