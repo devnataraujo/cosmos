@@ -111,7 +111,7 @@ h1::after{
     width: 0.125em;
     background: var(--color-green);
     animation: 
-        type var(--typeSpeed)  steps(40) 750ms  forwards,
+        type var(--typeSpeed)  steps(40) 750ms forwards,
         piscar 750ms steps(40) infinite;
     height: 40px;
 }

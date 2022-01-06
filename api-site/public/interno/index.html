@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./assets/css/index.css">
         <script src="../js/funcoes.js"></script>
     </head>
-    <body onload="validarSessao(), atualizacaoPeriodica()">
+    <body onload="validarSessao(), atualizacaoPeriodica(), audioo()">
         <header>
             <a href="ranking.html">
                 <img src="./assets/img/trofeu.png" alt="">
@@ -28,9 +28,14 @@
             </a>
         </div>
         <footer>
+
             <a href="../index.html">
                 <img src="./assets/img/sair.png" alt="">
             </a>
+            <iframe src="assets/sounds/250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" muted style="display: none"></iframe>
+            <audio id="player" autoplay loop>
+                <source src="assets/sounds/Sonido de interior de nave espacial - efecto de sonido - sound effect.mp3" type="audio/mp3">
+            </audio>
         </footer>
     </body>
 </html>

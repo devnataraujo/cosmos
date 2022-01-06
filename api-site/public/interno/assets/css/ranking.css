@@ -101,6 +101,7 @@ body{
 .content .ranking .ranking-content{
     margin-top: 8vh;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
 }
 

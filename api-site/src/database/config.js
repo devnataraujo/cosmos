@@ -69,3 +69,10 @@ function executar(instrucao) {
 module.exports = {
     executar
 }
+
+
+// C:\Users\natha\OneDrive\Documentos\SQL Server Management Studio
+
+
+
+// %ProgramData%\MySQL\MySQL Server 5.5\my.ini
